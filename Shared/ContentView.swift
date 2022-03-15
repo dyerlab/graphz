@@ -14,13 +14,13 @@ struct ContentView: View {
     @Binding var graph: Graph
 
     var body: some View {
-        GraphView(scene: GraphScene().DefaultScene() )
+        GraphView(scene: GraphScene(graph: graph) )
     }
     
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(graph: .constant(Graph.DefaultGraph()))
     }
 }

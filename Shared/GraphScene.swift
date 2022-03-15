@@ -7,11 +7,23 @@
 
 import Foundation
 import SpriteKit
+import SwiftUI
 
 
 class GraphScene: SKScene, SKPhysicsContactDelegate {
     
     var graph: Graph?
+    
+    init(graph: Graph ) {
+        
+        super.init()
+        
+        addGraph(graph: graph)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("not implemented yet")
+    }
 
     var edges: [Edge] {
         get {
@@ -65,12 +77,8 @@ extension GraphScene {
 extension GraphScene {
     
     func DefaultScene() -> GraphScene {
-        let scene = GraphScene()
-        
-        scene.addGraph(graph:  Graph.DefaultGraph() )
-        
+        let scene = GraphScene(graph: Graph.DefaultGraph() )
         return scene
-        
     }
     
 }
