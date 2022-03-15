@@ -10,6 +10,8 @@ import SpriteKit
 
 
 struct ContentView: View {
+    
+    @Binding var graph: Graph
 
     var body: some View {
         GraphView(scene: GraphScene().DefaultScene() )
